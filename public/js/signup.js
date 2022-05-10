@@ -2,14 +2,17 @@
 const handleSignupSubmit = async (event) => {
   event.preventDefault();
   try {
-    const username = document.querySelector("#username").value.trim();
+    const firstname = document.querySelector("#firstname").value.trim();
+    const lastname = document.querySelector("#lastname").value.trim();
+    const email = document.querySelector("#email").value.trim();
     const password = document.querySelector("#password").value.trim();
+
     const confirmPassword = document
       .querySelector("#confirm-password")
       .value.trim();
 
-    if (!username || !password) {
-      alert("You must provide a username and password.");
+    if (!firstname || !lastname || !email || !password) {
+      alert("You must provide a fistname, lastname, email and password.");
       return;
     }
 
@@ -20,7 +23,7 @@ const handleSignupSubmit = async (event) => {
 
     const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ firstname, lastname, email, password }),
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
       },
