@@ -1,0 +1,23 @@
+[
+    {
+        "zipcode": 12345,
+        "park": "park1",
+        "day": "monday",
+        "time": "morning",
+        "dog_id": 1
+    },
+    {
+        "zipcode": 12346,
+        "park": "park2",
+        "day": "tuesday",
+        "time": "morning",
+        "dog_id": 2
+    },
+    {
+        "zipcode": 12345,
+        "park": "park3",
+        "day": "monday",
+        "time": "evening",
+        "dog_id": 3
+    }
+  ]

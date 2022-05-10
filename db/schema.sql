@@ -1,2 +1,2 @@
--- drop database if exists DB_NAME;
-create database DB_NAME;
+DROP DATABASE IF EXISTS doggo_db;
+CREATE DATABASE doggo_db;

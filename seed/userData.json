@@ -1,14 +1,20 @@
 [
   {
-    "username": "harry",
+    "first_name": "harry",
+    "last_name": "Hair",
+    "email": "harryhair@gmail.com",
     "password": "password123"
   },
   {
-    "username": "hermione",
-    "password": "password123"
+    "first_name": "harry1",
+    "last_name": "Hair1",
+    "email": "harryhair1@gmail.com",
+    "password": "password1234"
   },
   {
-    "username": "hagrid",
-    "password": "password123"
+    "first_name": "harry2",
+    "last_name": "Hair2",
+    "email": "harryhair2@gmail.com",
+    "password": "password1235"
   }
 ]
