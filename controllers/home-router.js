@@ -45,4 +45,8 @@ router.get("/profile", (req, res) => {
   res.render("profile");
 });
 
+router.get("/search", (req, res) => {
+  res.render("search");
+});
+
 module.exports = router;
