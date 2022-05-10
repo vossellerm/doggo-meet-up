@@ -11,16 +11,18 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      {{#if isLoggedIn}}
-        <button class="btn btn-logout">Log Out</button>
-      {{else}}
-        <a href="/login">login</a>
-        <a href="/signup">signup</a>
-      {{/if}}
-    </nav>
-    {{{body}}}
+    <header>
+      <h1>Doggo Meet Up</h1>
+      <h3>Find dogs ready to play near you!</h3>
+    </header>
+    <img
+      src="../../public/assets/two-dogs-playing-tug-of-war-with-disc.jpeg"
+      alt=""
+    />
+    <div>
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Sign Up</button>
+    </div>
     <script src="/js/main.js"></script>
   </body>
 </html>

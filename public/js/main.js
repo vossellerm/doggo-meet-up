@@ -1,9 +1,13 @@
-document.querySelector(".btn-logout").addEventListener("click", async () => {
-  try {
-    await fetch("/api/users/logout", { method: "POST" });
-    document.location.replace("/login");
-  } catch (error) {
-    console.error(error);
-    console.error("Failed to logout.");
-  }
-});
+// Login button click takes user to login page
+document.querySelector(".login-btn").addEventListener(
+  "click",
+
+  document.location.replace("/login")
+);
+
+// Signup button click takes user to Signup page
+document.querySelector(".signup-btn").addEventListener(
+  "click",
+
+  document.location.replace("/signup")
+);
