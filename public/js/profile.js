@@ -38,3 +38,8 @@ const newFormHandler = (event) => {
 document
   .querySelector(".update-dog-form")
   .addEventListener("submit", newFormHandler);
+
+// Find-dogs button click takes user to search page
+document.querySelector(".find-dogs").addEventListener("click", function () {
+  document.location.replace("/search");
+});
