@@ -36,6 +36,9 @@ Owner.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [8],
+      },
     },
   },
   {
@@ -57,7 +60,7 @@ Owner.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Owner",
+    modelName: "owner",
   }
 );
 

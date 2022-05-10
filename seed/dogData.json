@@ -1,0 +1,23 @@
+[
+    {
+      "dog_name": "harry",
+      "size": "large",
+      "breed": "golden retriever",
+      "gender": "male",
+      "owner_id": 1
+    },
+    {
+        "dog_name": "happy",
+        "size": "small",
+        "breed": "chewawa",
+        "gender": "female",
+        "owner_id": 2
+    },
+    {
+        "dog_name": "sad",
+        "size": "medium",
+        "breed": "medium dog",
+        "gender": "male",
+        "owner_id": 3
+    }
+  ]
