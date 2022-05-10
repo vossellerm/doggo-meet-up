@@ -48,6 +48,7 @@ Owner.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+      // the beforeUpdate is only used if we are allowing user to update their password
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,

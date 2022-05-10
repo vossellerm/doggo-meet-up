@@ -1,13 +1,13 @@
 require("dotenv").config();
 const sequelize = require("../config/connection");
-const { User } = require("../models");
+const { Owner, Dog, Setting } = require("../models");
 
 const userData = require("./userData.json");
 
 const seedDatabase = async () => {
   try {
     await sequelize.sync({ force: true });
-    await User.bulkCreate(userData, {
+    await Owner.bulkCreate(userData, {
       individualHooks: true,
       returning: true,
     });
