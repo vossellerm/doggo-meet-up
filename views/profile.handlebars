@@ -2,13 +2,13 @@
 {{! update dog profile form }}
 <div class="columns">
   <div class="column">
-    <form class="box">
+    <form class="box update-dog-form">
       <h3>Update Your Dog</h3>
       {{! dog name }}
       <div class="field">
         <label class="label">Dog Name:</label>
         <div class="control">
-          <input class="input" type="text" />
+          <input class="input" type="text" id="dog-name" />
         </div>
       </div>
 
@@ -16,7 +16,7 @@
       <div class="field">
         <label class="label">Dog Breed:</label>
         <div class="control">
-          <input class="input" type="text" />
+          <input class="input" type="text" id="breed" />
         </div>
       </div>
 
@@ -24,10 +24,10 @@
       <div class="block">
         <label class="label">Dog Size:</label>
         <div class="select">
-          <select>
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
+          <select id="size">
+            <option id="small">Small</option>
+            <option id="medium">Medium</option>
+            <option id="large">Large</option>
           </select>
         </div>
       </div>
@@ -36,9 +36,9 @@
       <div class="block">
         <label class="label">Dog Gender:</label>
         <div class="select">
-          <select>
-            <option>Male</option>
-            <option>Female</option>
+          <select id="gender">
+            <option id="male">Male</option>
+            <option id="female">Female</option>
           </select>
         </div>
       </div>
@@ -47,7 +47,7 @@
       <div class="field">
         <label class="label">Zip Code:</label>
         <div class="control">
-          <input class="input" type="text" />
+          <input class="input" type="text" id="zipcode" />
         </div>
       </div>
 
@@ -55,7 +55,7 @@
       <div class="field">
         <label class="label">Preferred Park:</label>
         <div class="control">
-          <input class="input" type="text" />
+          <input class="input" type="text" id="park" />
         </div>
       </div>
 
@@ -63,32 +63,32 @@
       <div class="block">
         <div>
           <label class="label">Play Days:</label>
-          <label class="checkbox">
-            <input type="checkbox" />
+          <label class="checkbox" id="play-days">
+            <input type="checkbox" class="day" value="Monday" />
             Monday
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="day" value="Tuesday" />
             Tuesday
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="day" value="Wednesday" />
             Wednesday
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="day" value="Thursday" />
             Thursday
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="day" value="Friday" />
             Friday
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="day" value="Saturday" />
             Saturday
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="day" value="Sunday" />
             Sunday
           </label>
         </div>
@@ -97,23 +97,23 @@
       {{! play times check boxes }}
       <div class="block">
         <div>
-          <label class="label">Play Days:</label>
-          <label class="checkbox">
-            <input type="checkbox" />
+          <label class="label">Play Times:</label>
+          <label class="checkbox" id="play-times">
+            <input type="checkbox" class="times" value="Morning" />
             Morning
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="times" value="Afternoon" />
             Afternoon
           </label>
           <label class="checkbox">
-            <input type="checkbox" />
+            <input type="checkbox" class="times" value="Evening" />
             Evening
           </label>
         </div>
       </div>
 
-      <button class="button is-primary">Update Dog</button>
+      <button type="submit" class="button is-primary">Update Dog</button>
     </form>
   </div>
 
@@ -173,3 +173,5 @@
     </div>
   </div>
 </div>
+
+<script src="./js/profile.js"></script>
