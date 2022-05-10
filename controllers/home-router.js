@@ -37,4 +37,12 @@ router.get("/signup", (req, res) => {
   res.render("signup", { title: "Sign-Up Page" });
 });
 
+router.get("/home", (req, res) => {
+  res.render("home");
+});
+
+router.get("/profile", (req, res) => {
+  res.render("profile");
+});
+
 module.exports = router;
