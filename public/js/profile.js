@@ -11,17 +11,19 @@ const newFormHandler = (event) => {
   const gender = document.querySelector("#gender").value;
   const zipcode = document.querySelector("#zipcode").value.trim();
   const park = document.querySelector("#park").value.trim();
+  const image = document.querySelector("#image").value.trim();
 
   const day = document.querySelectorAll('input[class="day"]:checked');
   const time = document.querySelectorAll('input[class="times"]:checked');
 
-  if (name && breed && size && gender && zipcode && park) {
+  if (name && breed && size && gender && zipcode && park && image) {
     console.log(name);
     console.log(breed);
     console.log(size);
     console.log(gender);
     console.log(zipcode);
     console.log(park);
+    console.log(image);
   }
 
   for (var checkbox of day) {
