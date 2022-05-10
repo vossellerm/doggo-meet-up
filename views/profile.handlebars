@@ -1,0 +1,175 @@
+<h2>Welcome, John!</h2>
+{{! update dog profile form }}
+<div class="columns">
+  <div class="column">
+    <form class="box">
+      <h3>Update Your Dog</h3>
+      {{! dog name }}
+      <div class="field">
+        <label class="label">Dog Name:</label>
+        <div class="control">
+          <input class="input" type="text" />
+        </div>
+      </div>
+
+      {{! dog breed }}
+      <div class="field">
+        <label class="label">Dog Breed:</label>
+        <div class="control">
+          <input class="input" type="text" />
+        </div>
+      </div>
+
+      {{! dog size dropdown}}
+      <div class="block">
+        <label class="label">Dog Size:</label>
+        <div class="select">
+          <select>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+        </div>
+      </div>
+
+      {{! dog gender dropdown }}
+      <div class="block">
+        <label class="label">Dog Gender:</label>
+        <div class="select">
+          <select>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+
+      {{! zipcode }}
+      <div class="field">
+        <label class="label">Zip Code:</label>
+        <div class="control">
+          <input class="input" type="text" />
+        </div>
+      </div>
+
+      {{! preferred park }}
+      <div class="field">
+        <label class="label">Preferred Park:</label>
+        <div class="control">
+          <input class="input" type="text" />
+        </div>
+      </div>
+
+      {{! play days check boxes }}
+      <div class="block">
+        <div>
+          <label class="label">Play Days:</label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Monday
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Tuesday
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Wednesday
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Thursday
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Friday
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Saturday
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Sunday
+          </label>
+        </div>
+      </div>
+
+      {{! play times check boxes }}
+      <div class="block">
+        <div>
+          <label class="label">Play Days:</label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Morning
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Afternoon
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" />
+            Evening
+          </label>
+        </div>
+      </div>
+
+      <button class="button is-primary">Update Dog</button>
+    </form>
+  </div>
+
+  <div class="column">
+
+    {{! display profile info }}
+    <div class="box">
+      <h3>Your Dog</h3>
+      {{! dog name }}
+      <div class="block">
+        <strong>Dog Name:</strong>
+        Sport
+      </div>
+
+      {{! dog breed }}
+      <div class="block">
+        <strong>Dog Breed:</strong>
+        Golden Retriever
+      </div>
+
+      {{! dog size }}
+      <div class="block">
+        <strong>Dog Size:</strong>
+        Small
+      </div>
+
+      {{! dog gender }}
+      <div class="block">
+        <strong>Dog Gender:</strong>
+        Male
+      </div>
+
+      {{! zipcode }}
+      <div class="block">
+        <strong>Zip Code:</strong>
+        12345
+      </div>
+
+      {{! Preffered Park }}
+      <div class="block">
+        <strong>Preferred Park:</strong>
+        Carmel Valley Park
+      </div>
+
+      {{! Play Days }}
+      <div class="block">
+        <strong>Play Days:</strong>
+        Wednesday, Sunday
+      </div>
+
+      {{! Play Times }}
+      <div class="block">
+        <strong>Play Times:</strong>
+        Afternoon
+      </div>
+
+    </div>
+  </div>
+</div>
