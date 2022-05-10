@@ -1,10 +1,10 @@
-const { User } = require("../../models");
+const { Owner } = require("../../models");
 const router = require("express").Router();
 
 router.post("/", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password, first_name, last_name } = req.body;
   try {
-    const user = await User.create(req.body, { username, password });
+    const user = await Owner.create(req.body, { email, password, first_name, last_name });
     req.session.isLoggedIn = true;
     req.session.userId = user.id;
     req.session.save(() => res.json({ id: user.id }));
@@ -15,9 +15,9 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.findOne({ where: { username } });
+    const user = await Owner.findOne({ where: { email } });
     if (!user) {
       throw new Error("User not found.");
     }
@@ -33,6 +33,21 @@ router.post("/login", async (req, res) => {
     res.status(400).json({ message: "Invalid username or password." });
   }
 });
+
+//Get ONE owner
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await Owner.findByPk(req.params.id);
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
