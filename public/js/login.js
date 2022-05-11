@@ -10,7 +10,7 @@ const handleLoginSubmit = async (event) => {
       return;
     }
 
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/user/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {
@@ -19,8 +19,10 @@ const handleLoginSubmit = async (event) => {
     });
 
     if (!response.ok) {
-      alert("Failed to sign up.");
+      alert("Failed to log in.");
       return;
+    } else {
+      document.location.replace("/profile");
     }
 
     // go to home page
