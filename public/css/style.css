@@ -44,7 +44,8 @@ img {
 }
 
 .login-form,
-.signup-p {
+.signup-p,
+.signup-form {
   display: block;
   width: 50%;
   margin: auto;
