@@ -2,8 +2,8 @@
 const handleSignupSubmit = async (event) => {
   event.preventDefault();
   try {
-    const firstname = document.querySelector("#firstname").value.trim();
-    const lastname = document.querySelector("#lastname").value.trim();
+    const first_name = document.querySelector("#firstname").value.trim();
+    const last_name = document.querySelector("#lastname").value.trim();
     const email = document.querySelector("#email").value.trim();
     const password = document.querySelector("#password").value.trim();
 
@@ -11,7 +11,7 @@ const handleSignupSubmit = async (event) => {
       .querySelector("#confirm-password")
       .value.trim();
 
-    if (!firstname || !lastname || !email || !password) {
+    if (!first_name || !last_name || !email || !password) {
       alert("You must provide a fistname, lastname, email and password.");
       return;
     }
@@ -21,9 +21,9 @@ const handleSignupSubmit = async (event) => {
       return;
     }
 
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/user", {
       method: "POST",
-      body: JSON.stringify({ firstname, lastname, email, password }),
+      body: JSON.stringify({ first_name, last_name, email, password }),
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
       },
@@ -32,10 +32,9 @@ const handleSignupSubmit = async (event) => {
     if (!response.ok) {
       alert("Failed to sign up.");
       return;
+    } else {
+      document.location.replace("/profile");
     }
-
-    // go to home page
-    window.location.replace("/");
   } catch (error) {
     console.log(error);
   }

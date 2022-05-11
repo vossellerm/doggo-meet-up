@@ -24,9 +24,6 @@ const handleLoginSubmit = async (event) => {
     } else {
       document.location.replace("/profile");
     }
-
-    // go to home page
-    window.location.replace("/");
   } catch (error) {
     console.log(error);
   }
