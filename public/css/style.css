@@ -1,0 +1,53 @@
+header {
+  width: max-content;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+img {
+  display: block;
+  height: 200px;
+  margin: auto;
+}
+
+#logo {
+  height: 100px;
+}
+
+.home-page-image {
+  width: 50%;
+  height: auto;
+}
+
+.homepage-btns {
+  display: block;
+  width: max-content;
+  margin: auto;
+}
+
+.homepage-btns button {
+  margin: 20px;
+  width: 200px;
+}
+
+.login-form,
+.signup-p,
+.signup-form {
+  display: block;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+}
