@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Owner } = require("../models");
 
-router.get("/", async (req, res) => {
+router.get("/profile", async (req, res) => {
   try {
     let user;
     if (req.session.isLoggedIn) {
@@ -30,10 +30,6 @@ router.get("/signup", (req, res) => {
 
 router.get("/home", (req, res) => {
   res.render("home");
-});
-
-router.get("/profile", (req, res) => {
-  res.render("profile");
 });
 
 router.get("/search", (req, res) => {

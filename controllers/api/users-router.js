@@ -4,7 +4,12 @@ const router = require("express").Router();
 router.post("/", async (req, res) => {
   const { email, password, first_name, last_name } = req.body;
   try {
-    const user = await Owner.create(req.body, { email, password, first_name, last_name });
+    const user = await Owner.create(req.body, {
+      email,
+      password,
+      first_name,
+      last_name,
+    });
     req.session.isLoggedIn = true;
     req.session.userId = user.id;
     req.session.save(() => res.json({ id: user.id }));
@@ -35,11 +40,11 @@ router.post("/login", async (req, res) => {
 });
 
 //Get ONE owner
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const userData = await Owner.findByPk(req.params.id);
     if (!userData) {
-      res.status(404).json({ message: 'No user with this id!' });
+      res.status(404).json({ message: "No user with this id!" });
       return;
     }
     res.status(200).json(userData);
@@ -47,7 +52,6 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
