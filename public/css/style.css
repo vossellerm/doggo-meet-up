@@ -8,11 +8,15 @@ header {
 
 h1 {
   font-size: 40px;
+  color: azure;
   font-weight: bold;
+
 }
+
 
 h2 {
   font-size: 20px;
+  color: azure;
   font-weight: bold;
   font-style: italic;
   text-align: center;
@@ -35,6 +39,7 @@ img {
 
 #logo {
   height: 100px;
+  color: azure;
 }
 
 #logout {
@@ -70,6 +75,11 @@ img {
   width: 50%;
   margin: auto;
   margin-bottom: 20px;
+  background-color:rgba(74, 124, 89, 0.4);
+  padding: 2em;
+  border-radius: 20px;
+  
+  
 }
 
 .find-dogs {
@@ -83,4 +93,28 @@ img {
   margin: auto;
   width: 50%;
   margin-bottom: 20px;
+}
+
+.box{
+  background-color: #eef8fd;
+}
+
+body{
+  background-image: url("/assets/two-dogs-playing-tug-of-war-with-disc.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.searchzip{
+  color: azure;
+
+}
+
+.label{
+  color: azure;
+}
+
+.signup-p{
+  color: azure;
 }
