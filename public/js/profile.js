@@ -17,13 +17,12 @@ const newFormHandler = (event) => {
   const time = document.querySelectorAll('input[class="times"]:checked');
 
   if (name && breed && size && gender && zipcode && park && image) {
-    console.log(name);
-    console.log(breed);
-    console.log(size);
-    console.log(gender);
-    console.log(zipcode);
-    console.log(park);
-    console.log(image);
+    // fetch dog data
+    // if new dog, run POST
+    // if updating dog, run PUT
+    // IF (user has a dog)
+    // THEN GET dog and run PUT route to update dog info
+    // ELSE THEN GET error and run POST route to create a dog
   }
 
   for (var checkbox of day) {
