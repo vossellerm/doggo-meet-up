@@ -15,6 +15,16 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 2px;
+  margin-bottom: 10px;
 }
 
 img {
@@ -25,6 +35,16 @@ img {
 
 #logo {
   height: 100px;
+}
+
+#logout {
+  display: block;
+  margin: auto;
+}
+
+#search {
+  display: block;
+  margin: auto;
 }
 
 .home-page-image {
@@ -49,5 +69,18 @@ img {
   display: block;
   width: 50%;
   margin: auto;
+  margin-bottom: 20px;
+}
+
+.find-dogs {
+  display: block;
+  margin: auto;
+}
+
+.search-zip {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 50%;
   margin-bottom: 20px;
 }
