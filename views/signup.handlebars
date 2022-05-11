@@ -1,31 +1,48 @@
+<form class="signup-form">
 
+  <div class="field">
+    <label class="label">First Name:</label>
+    <div class="control">
+      <input class="input" type="text" name="firstname" id="firstname" />
+    </div>
+  </div>
 
-<form class='signup-form'>
+  <div class="field">
+    <label class="label">Last Name:</label>
+    <div class="control">
+      <input class="input" type="text" name="lastname" id="lastname" />
+    </div>
+  </div>
 
+  <div class="field">
+    <label class="label" for="email">Please enter your email:</label>
+    <div class="control">
+      <input class="input" type="email" name="email" id="email" />
+    </div>
+  </div>
 
-  <label for='firstname'>First Name:</label><br />
-  <input type='text' name='firstname' id='firstname' /><br />
+  <div class="field">
+    <label class="label" for="password">Choose a password:</label>
+    <div class="control">
+      <input class="input" type="password" name="password" id="password" />
+    </div>
+  </div>
 
+  <div class="field">
+    <label class="label" for="password">Confirm Password:</label>
+    <div class="control">
+      <input
+        class="input"
+        type="password"
+        name="confirm-password"
+        id="confirm-password"
+      />
+    </div>
+  </div>
 
-  <label for='lastname'>Last Name:</label><br />
-  <input type='text' name='lastname' id='lastname' /><br />
-
-
-  <label for='email'>Please enter your email:</label><br />
-  <input type='email' name='email' id='email' /><br />
-
-  <label for='password'>Choose a password:</label><br />
-  <input type='password' name='password' id='password' /><br />
-
-
-<label for='confirm-password'>Confirm Password:</label><br />
-  <input type='password' name='confirm-password' id='confirm-password' /><br />
-
-
-  <button class='btn' type='submit'>Submit</button>
+  <button class="button" type="submit">Submit</button>
 </form>
 
-<p>Already have an account? <a href='/login'>Login Here</a></p>
+<p>Already have an account? <a href="/login">Login Here</a></p>
 
-
-<script src='/js/signup.js'></script>
+<script src="/js/signup.js"></script>
