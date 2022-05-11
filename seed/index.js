@@ -3,11 +3,21 @@ const sequelize = require("../config/connection");
 const { Owner, Dog, Setting } = require("../models");
 
 const userData = require("./userData.json");
+const dogData = require("./dogData.json");
+const setting = require("./setting.json");
 
 const seedDatabase = async () => {
   try {
     await sequelize.sync({ force: true });
     await Owner.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Dog.bulkCreate(dogData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Setting.bulkCreate(setting, {
       individualHooks: true,
       returning: true,
     });
