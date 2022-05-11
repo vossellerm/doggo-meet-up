@@ -1,14 +1,15 @@
 const { Dog, Setting } = require("../../models");
 const router = require("express").Router();
+const withAuth = require("../../util/withAuth");
 
 // POST route to create new dog profile
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     const { dog_name, size, breed, gender, zipcode, park, day, time } = req.body;
     try {
-        if (!req.session.isLoggedIn) {
-            res.redirect("login")
-            return;
-        }
+        // if (!req.session.isLoggedIn) {
+        //     res.redirect("login")
+        //     return;
+        // }
 
       const owner_id = req.session.userId;
       const dog = await Dog.create( { dog_name, size, breed, gender, owner_id });
@@ -24,7 +25,7 @@ router.post("/", async (req, res) => {
   });
 
 // PUT route to update dog profile by dog's id
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
 const { dog_name, size, breed, gender, zipcode, park, day, time } = req.body;
     try {
         const dog = await Dog.update({dog_name, size, breed, gender }, { where: {
@@ -45,7 +46,7 @@ const { dog_name, size, breed, gender, zipcode, park, day, time } = req.body;
 });
 
 // GET one dog profile route to test if PUT route is working correctly 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     // find a single dog by dog `id`
     try {
         const dog = await Dog.findByPk(req.params.id, {
@@ -65,7 +66,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // GET all dogs profile route to test for PUT route
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     // find all dogs' profile
     try {
       const dog = await Dog.findAll({
