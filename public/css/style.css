@@ -37,6 +37,16 @@ img {
   height: 100px;
 }
 
+#logout {
+  display: block;
+  margin: auto;
+}
+
+#search {
+  display: block;
+  margin: auto;
+}
+
 .home-page-image {
   width: 50%;
   height: auto;
@@ -65,4 +75,12 @@ img {
 .find-dogs {
   display: block;
   margin: auto;
+}
+
+.search-zip {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 20px;
 }
