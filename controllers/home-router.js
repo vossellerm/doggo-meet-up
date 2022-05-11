@@ -1,17 +1,16 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { Owner } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
     let user;
     if (req.session.isLoggedIn) {
-      user = await User.findByPk(req.session.userId, {
+      user = await Owner.findByPk(req.session.userId, {
         exclude: ["password"],
         raw: true,
       });
     }
-    res.render("home", {
-      title: "Home Page",
+    res.render("profile", {
       isLoggedIn: req.session.isLoggedIn,
       user,
     });
