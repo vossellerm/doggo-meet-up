@@ -7,20 +7,21 @@ header {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 65px;
   color: azure;
   font-weight: bold;
-
+  font-family: 'Love Ya Like A Sister', cursive;
 }
 
 
 h2 {
-  font-size: 20px;
+  font-size: 25px;
   color: azure;
   font-weight: bold;
   font-style: italic;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Love Ya Like A Sister', cursive;
 }
 
 h3 {
@@ -29,6 +30,7 @@ h3 {
   text-align: center;
   border-bottom: solid 2px;
   margin-bottom: 10px;
+ 
 }
 
 img {
@@ -38,8 +40,8 @@ img {
 }
 
 #logo {
-  height: 100px;
-  color: azure;
+  height: 125px;
+
 }
 
 #logout {
@@ -96,7 +98,8 @@ img {
 }
 
 .box{
-  background-color: #eef8fd;
+  background-color: #e9f9f1;
+  padding: 2em;
 }
 
 body{
@@ -104,11 +107,13 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  padding: 3em;
 }
 
 .searchzip{
   color: azure;
-
+  font-size: 20px;
+ 
 }
 
 .label{
@@ -117,4 +122,16 @@ body{
 
 .signup-p{
   color: azure;
+}
+
+.block{
+  color: black;
+}
+
+.pro{
+  color: rgb(69, 66, 66)
+}
+
+.lh{
+  color: rgb(255, 255, 255);
 }
