@@ -23,11 +23,31 @@ const newFormHandler = async (event) => {
     const formType = document.querySelector("#updateForm");
     const action = formType.dataset.action;
     // if the data-action = create
+    function reload() {
+      reload = location.reload();
+    }
+
     if (action === "create") {
       // then fetch create POST route
-      alert("Created");
+      const response = await fetch("/api/profile/", {
+        method: "POST",
+        body: JSON.stringify({
+          dog_name,
+          breed,
+          size,
+          gender,
+          zipcode,
+          park,
+          img,
+          day,
+          time,
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      });
+      reload();
     } else {
-      alert("Updated");
       const response = await fetch("/api/profile/", {
         method: "PUT",
         body: JSON.stringify({
@@ -45,11 +65,8 @@ const newFormHandler = async (event) => {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
-      // console.log(response);
-      function reload() {
-        reload = location.reload();
-      }
       reload();
+      // console.log(response);
     }
 
     // else the data-action = update
