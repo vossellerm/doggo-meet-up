@@ -24,7 +24,7 @@ const newSearch = async (event) => {
     alert("Enter valid Zip Code");
     return;
   }
-console.log(zipcode)
+  console.log(zipcode);
   const response = await fetch(`/api/search/?zipcode=${zipcode}`, {
     method: "GET",
     // body: JSON.stringify({ first_name, last_name, email, password }),
@@ -40,6 +40,10 @@ console.log(zipcode)
     // display dogs with matching zipcode
     document.location.replace(`/api/search/?zipcode=${zipcode}`);
   }
+  // else {
+  //   // display dogs with matching zipcode
+  //   console.log(response);
+  // }
 };
 
 document.querySelector("#search").addEventListener("click", newSearch);
@@ -49,6 +53,7 @@ const contact = (event) => {
   event.preventDefault();
 
   alert("hello");
+  // location.href =
 };
 
 [...document.querySelectorAll(".contact")].forEach(function (item) {

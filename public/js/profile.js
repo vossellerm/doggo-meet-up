@@ -12,65 +12,57 @@ const newFormHandler = async (event) => {
     const zipcode = document.querySelector("#zipcode").value.trim();
     const park = document.querySelector("#park").value.trim();
     const image = document.querySelector("#image").value.trim();
-  
+
     const day = document.querySelectorAll('input[class="day"]:checked');
     const time = document.querySelectorAll('input[class="times"]:checked');
-  
+
     for (var checkbox of day) {
       console.log(checkbox.value + " ");
     }
-  
+
     for (var checkbox of time) {
       console.log(checkbox.value + " ");
     }
 
     // if (name && breed && size && gender && zipcode && park && image) {
-      
+
     // }
-    
-    // fetch dog data
-    const response = await fetch("/api/profile", {
-      method: "GET",
-      // body: JSON.stringify({ name, breed, size, gender, zipcode, park, image }),
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8",
-      },
-    });
-    // if new dog, run POST
-    if (!response.ok) {
-      // fetch the POST route
-      return;
+
+    const formType = document.querySelector("#updateForm");
+    const action = formType.dataset.action;
+    // if the data-action = create
+    if (action === "create") {
+      // then fetch create POST route
+      alert("Created");
     } else {
-      console.log(JSON.stringify(response));
-      
-      // if updating dog, run PUT
-      //fetch the PUT route
-      // const id = 
-      const update = await fetch(`/api/profile/${id}`, {
+      alert("Updated");
+      const response = await fetch("/api/", {
         method: "PUT",
-        body: JSON.stringify({ name, breed, size, gender, zipcode, park, image }),
+        body: JSON.stringify({
+          name,
+          breed,
+          size,
+          gender,
+          zipcode,
+          park,
+          image,
+          day,
+          time,
+        }),
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
-  
-      if (!update.ok) {
-        alert("Failed to update.");
-        return;
-      } else {
-        alert("Profile has been updated.");
-      }
+      console.log(response);
     }
-
+    // else the data-action = update
+    // then fetch update PUT route
   } catch (error) {
     console.log(error);
   }
-
 };
 
-document
-  .querySelector(".updateDog")
-  .addEventListener("click", newFormHandler);
+document.querySelector(".updateDog").addEventListener("click", newFormHandler);
 
 // Find-dogs button click takes user to search page
 document.querySelector(".find-dogs").addEventListener("click", function () {

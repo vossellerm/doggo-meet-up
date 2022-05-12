@@ -8,11 +8,11 @@
 </div>
 
 
-<h2>Welcome, John!</h2>
+<h2>Welcome, {{user.first_name}}!</h2>
 {{! update dog profile form }}
 <div class="columns">
   <div class="column">
-    <form class="box update-dog-form">
+    <form class="box update-dog-form" id="updateForm" data-action="{{actionType}}">
       <h3>Update Your Dog</h3>
       {{! dog name }}
       <div class="field">
@@ -130,9 +130,13 @@
         </div>
       </div>
 
-      <button type="submit" class="button is-primary updateDog">Update Dog</button>
+      <button type="submit" class="button is-primary updateDog">
+        {{#if user.dog}}Update Dog{{else}}Add Dog{{/if}}
+      </button>
     </form>
   </div>
+
+
 
   <div class="column">
 
@@ -142,49 +146,49 @@
       {{! dog name }}
       <div class="block">
         <strong>Dog Name:</strong>
-        Sport
+        {{user.dog.dog_name}}
       </div>
 
       {{! dog breed }}
       <div class="block">
         <strong>Dog Breed:</strong>
-        Golden Retriever
+        {{user.dog.breed}}
       </div>
 
       {{! dog size }}
       <div class="block">
         <strong>Dog Size:</strong>
-        Small
+        {{user.dog.size}}
       </div>
 
       {{! dog gender }}
       <div class="block">
         <strong>Dog Gender:</strong>
-        Male
+        {{user.dog.gender}}
       </div>
 
       {{! zipcode }}
       <div class="block">
         <strong>Zip Code:</strong>
-        12345
+        {{user.dog.setting.zipcode}}
       </div>
 
       {{! Preffered Park }}
       <div class="block">
         <strong>Preferred Park:</strong>
-        Carmel Valley Park
+        {{user.dog.setting.park}}
       </div>
 
       {{! Play Days }}
       <div class="block">
         <strong>Play Days:</strong>
-        Wednesday, Sunday
+        {{user.dog.setting.day}}
       </div>
 
       {{! Play Times }}
       <div class="block">
         <strong>Play Times:</strong>
-        Afternoon
+        {{user.dog.setting.time}}
       </div>
 
       {{! Dog Image }}

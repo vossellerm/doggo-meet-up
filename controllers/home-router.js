@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Owner } = require("../models");
+const { Owner, Dog, Setting } = require("../models");
 
 router.get("/profile", async (req, res) => {
   try {
@@ -7,12 +7,15 @@ router.get("/profile", async (req, res) => {
     if (req.session.isLoggedIn) {
       user = await Owner.findByPk(req.session.userId, {
         exclude: ["password"],
-        raw: true,
+        include: [{ model: Dog, include: Setting }],
       });
+      user = user.get({ plain: true });
     }
+    console.log(user);
     res.render("profile", {
       isLoggedIn: req.session.isLoggedIn,
       user,
+      actionType: user.dog ? "update" : "create",
     });
   } catch (error) {
     console.error(error);
