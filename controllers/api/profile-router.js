@@ -4,7 +4,7 @@ const withAuth = require("../../util/withAuth");
 
 // POST route to create new dog profile
 router.post("/", withAuth, async (req, res) => {
-  const { dog_name, size, breed, gender, zipcode, park, day, time } = req.body;
+  const { dog_name, size, breed, gender, img, zipcode, park, day, time } = req.body;
   try {
     // if (!req.session.isLoggedIn) {
     //     res.redirect("login")
@@ -12,7 +12,7 @@ router.post("/", withAuth, async (req, res) => {
     // }
 
     const owner_id = req.session.userId;
-    const dog = await Dog.create({ dog_name, size, breed, gender, owner_id });
+    const dog = await Dog.create({ dog_name, size, breed, gender, img, owner_id });
     const dog_id = dog.id;
 
     const setting = await Setting.create({ zipcode, park, day, time, dog_id });
@@ -26,10 +26,10 @@ router.post("/", withAuth, async (req, res) => {
 
 // PUT route to update dog profile by dog's id
 router.put("/:ownerId", withAuth, async (req, res) => {
-  const { dog_name, size, breed, gender, zipcode, park, day, time } = req.body;
+  const { dog_name, size, breed, gender, img, zipcode, park, day, time } = req.body;
   try {
     const dog = await Dog.update(
-      { dog_name, size, breed, gender },
+      { dog_name, size, breed, gender, img },
       {
         where: {
           owner_id: req.params.ownerId,
