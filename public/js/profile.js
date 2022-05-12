@@ -11,7 +11,7 @@ const newFormHandler = async (event) => {
     const gender = document.querySelector("#gender").value;
     const zipcode = document.querySelector("#zipcode").value.trim();
     const park = document.querySelector("#park").value.trim();
-    const img = document.querySelector("#image").value.trim();
+    const img = document.querySelector("#image").value.trim() || null;
 
     const day = document.querySelector("#day").value;
     const time = document.querySelector("#time").value;
@@ -23,9 +23,6 @@ const newFormHandler = async (event) => {
     const formType = document.querySelector("#updateForm");
     const action = formType.dataset.action;
     // if the data-action = create
-    function reload() {
-      reload = location.reload();
-    }
 
     if (action === "create") {
       // then fetch create POST route
@@ -46,9 +43,8 @@ const newFormHandler = async (event) => {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
-      reload();
     } else {
-      const response = await fetch("/api/profile/", {
+      const response = await fetch("/api/profile", {
         method: "PUT",
         body: JSON.stringify({
           dog_name,
@@ -65,14 +61,26 @@ const newFormHandler = async (event) => {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
-      reload();
       // console.log(response);
     }
-
+    location.reload();
     // else the data-action = update
     // then fetch update PUT route
   } catch (error) {
     console.log(error);
+  }
+};
+
+const logout = async () => {
+  const response = await fetch("/api/user/logout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    document.location.replace("/home");
+  } else {
+    alert(response.statusText);
   }
 };
 
@@ -83,6 +91,4 @@ document.querySelector(".find-dogs").addEventListener("click", function () {
   document.location.replace("/search");
 });
 
-document.querySelector(".logo").addEventListener("click", function () {
-  document.location.replace("/home");
-});
+document.querySelector(".logo").addEventListener("click", logout);

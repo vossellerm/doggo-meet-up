@@ -35,10 +35,11 @@ router.post("/", withAuth, async (req, res) => {
 // PUT route to update dog profile by dog's id
 // router.put("/:ownerId", withAuth, async (req, res) => {
 router.put("/", withAuth, async (req, res) => {
+  console.log(req.body);
   const { dog_name, size, breed, gender, img, zipcode, park, day, time } =
     req.body;
   try {
-    const dog = await Dog.update(
+    await Dog.update(
       { dog_name, size, breed, gender, img },
       {
         where: {
@@ -46,19 +47,17 @@ router.put("/", withAuth, async (req, res) => {
         },
       }
     );
-
-    const dog_id = await Dog.findOne({
+    const dog = await Dog.findOne({
       where: {
         owner_id: req.session.userId,
       },
     });
-    const test = dog_id.get({ plain: true });
-    console.log(test);
-    const setting = await Setting.update(
+
+    await Setting.update(
       { zipcode, park, day, time },
       {
         where: {
-          dog_id: test.id,
+          dog_id: dog.id,
         },
       }
     );

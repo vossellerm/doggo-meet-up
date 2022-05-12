@@ -1,18 +1,18 @@
 // logout button -logs user out/destroys session
-const logout = async () => {
-  const response = await fetch("/api/users/logout", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-  });
+// const logout = async () => {
+//   const response = await fetch("/api/users/logout", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//   });
 
-  if (response.ok) {
-    document.location.replace("/");
-  } else {
-    alert(response.statusText);
-  }
-};
+//   if (response.ok) {
+//     document.location.replace("/");
+//   } else {
+//     alert(response.statusText);
+//   }
+// };
 
-document.querySelector("#logout").addEventListener("click", logout);
+// document.querySelector("#logout").addEventListener("click", logout);
 
 // search button - generates new zipcode search results
 const newSearch = async (event) => {
@@ -40,26 +40,37 @@ const newSearch = async (event) => {
     // display dogs with matching zipcode
     document.location.replace(`/api/search/?zipcode=${zipcode}`);
   }
-  // else {
-  //   // display dogs with matching zipcode
-  //   console.log(response);
-  // }
 };
 
 document.querySelector("#search").addEventListener("click", newSearch);
 
-// Contact Me Button - email window popup of user
-const contact = (event) => {
-  event.preventDefault();
+// // Contact Me Button - email window popup of user
+// const contact = (event) => {
+//   event.preventDefault();
 
-  alert("hello");
-  // location.href =
+//   alert("hello");
+//   location.href = `mailto:${email}`;
+// };
+
+const logout = async () => {
+  const response = await fetch("/api/user/logout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    document.location.replace("/home");
+  } else {
+    alert(response.statusText);
+  }
 };
 
-[...document.querySelectorAll(".contact")].forEach(function (item) {
-  item.addEventListener("click", contact);
-});
+// [...document.querySelectorAll(".contact")].forEach(function (item) {
+//   item.addEventListener("click", contact);
+// });
 
 document.querySelector(".backpro").addEventListener("click", function () {
   document.location.replace("/profile");
 });
+
+document.querySelector(".logo").addEventListener("click", logout);
