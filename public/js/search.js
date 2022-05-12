@@ -55,3 +55,7 @@ const contact = (event) => {
 [...document.querySelectorAll(".contact")].forEach(function (item) {
   item.addEventListener("click", contact);
 });
+
+document.querySelector(".backpro").addEventListener("click", function () {
+  document.location.replace("/profile");
+});
