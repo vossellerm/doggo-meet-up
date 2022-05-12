@@ -36,11 +36,10 @@ console.log(zipcode)
   if (!response.ok) {
     alert("No dogs available to play near you.");
     return;
-  } 
-  // else {
-  //   // display dogs with matching zipcode
-  //   console.log(response);
-  // }
+  } else {
+    // display dogs with matching zipcode
+    document.location.replace(`/api/search/?zipcode=${zipcode}`);
+  }
 };
 
 document.querySelector("#search").addEventListener("click", newSearch);
