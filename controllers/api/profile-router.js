@@ -47,15 +47,22 @@ router.put("/", withAuth, async (req, res) => {
       }
     );
 
+    const dog_id = await Dog.findOne({
+      where: {
+        owner_id: req.session.userId,
+      },
+    });
+    const test = dog_id.get({ plain: true });
+    console.log(test);
     const setting = await Setting.update(
       { zipcode, park, day, time },
       {
         where: {
-          dog_id: req.params.id,
+          dog_id: test.id,
         },
       }
     );
-    console.log(dog, setting);
+    // console.log(dog, setting);
     res.status(200).json({ message: "The profile has been updated" });
   } catch (err) {
     console.log(err);
