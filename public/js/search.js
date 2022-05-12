@@ -53,6 +53,7 @@ const contact = (event) => {
   event.preventDefault();
 
   alert("hello");
+  // location.href =
 };
 
 [...document.querySelectorAll(".contact")].forEach(function (item) {

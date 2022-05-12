@@ -12,7 +12,7 @@
 {{! update dog profile form }}
 <div class="columns">
   <div class="column">
-    <form class="box update-dog-form">
+    <form class="box update-dog-form" data-action="{{actionType}}">
       <h3>Update Your Dog</h3>
       {{! dog name }}
       <div class="field">
@@ -130,9 +130,13 @@
         </div>
       </div>
 
-      <button type="submit" class="button is-primary updateDog">Update Dog</button>
+      <button type="submit" class="button is-primary updateDog">
+        {{#if user.dog}}Update Dog{{else}}Add Dog{{/if}}
+      </button>
     </form>
   </div>
+
+
 
   <div class="column">
 
