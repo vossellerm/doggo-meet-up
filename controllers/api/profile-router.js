@@ -25,14 +25,14 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 // PUT route to update dog profile by dog's id
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:ownerId", withAuth, async (req, res) => {
   const { dog_name, size, breed, gender, zipcode, park, day, time } = req.body;
   try {
     const dog = await Dog.update(
       { dog_name, size, breed, gender },
       {
         where: {
-          id: req.params.id,
+          owner_id: req.params.ownerId,
         },
       }
     );
@@ -53,7 +53,23 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-// GET one dog profile route to test if PUT route is working correctly
+// GET all dogs profile route to check if owner has a dog
+router.get("/owner", withAuth, async (req, res) => {
+  // find all dogs' profile
+  try {
+    const dog = await Dog.findAll({
+      where: { owner_id: req.session.userId },
+      include: [{ model: Setting }],
+    });
+    
+    res.status(200).json(dog);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// ------------------------------- for testing only ----------------------
+// Testing - GET one dog profile route to test if PUT route is working correctly
 router.get("/:id", withAuth, async (req, res) => {
   // find a single dog by dog `id`
   try {
@@ -73,7 +89,7 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-// GET all dogs profile route to test for PUT route
+// Testing ---- GET all dogs profile route to test for PUT route
 router.get("/", withAuth, async (req, res) => {
   // find all dogs' profile
   try {
@@ -87,19 +103,5 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-// GET all dogs profile route to check if owner has a dog
-router.get("/:owner_id", withAuth, async (req, res) => {
-  // find all dogs' profile
-  try {
-    const dog = await Dog.findAll({
-      where: { owner_id: req.params.owner_id },
-      include: [{ model: Setting }],
-    });
-
-    res.status(200).json(dog);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;
