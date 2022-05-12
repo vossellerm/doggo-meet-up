@@ -166,12 +166,14 @@
       </div>
 
       {{! Dog Image }}
+      {{#if user.dog.img}}
       <div class="block">
         <img
           src="{{user.dog.img}}"
           alt=""
         />
       </div>
+      {{/if}}
     </div>
     <button class="button is-large is-primary find-dogs">Find Dogs Near You</button>
   </div>
