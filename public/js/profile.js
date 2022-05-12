@@ -5,24 +5,16 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
   try {
-    const name = document.querySelector("#dog-name").value.trim();
+    const dog_name = document.querySelector("#dog-name").value.trim();
     const breed = document.querySelector("#breed").value.trim();
     const size = document.querySelector("#size").value;
     const gender = document.querySelector("#gender").value;
     const zipcode = document.querySelector("#zipcode").value.trim();
     const park = document.querySelector("#park").value.trim();
-    const image = document.querySelector("#image").value.trim();
+    const img = document.querySelector("#image").value.trim();
 
-    const day = document.querySelectorAll('input[class="day"]:checked');
-    const time = document.querySelectorAll('input[class="times"]:checked');
-
-    for (var checkbox of day) {
-      console.log(checkbox.value + " ");
-    }
-
-    for (var checkbox of time) {
-      console.log(checkbox.value + " ");
-    }
+    const day = document.querySelector("#day").value;
+    const time = document.querySelector("#time").value;
 
     // if (name && breed && size && gender && zipcode && park && image) {
 
@@ -36,16 +28,16 @@ const newFormHandler = async (event) => {
       alert("Created");
     } else {
       alert("Updated");
-      const response = await fetch("/api/", {
+      const response = await fetch("/api/profile/", {
         method: "PUT",
         body: JSON.stringify({
-          name,
+          dog_name,
           breed,
           size,
           gender,
           zipcode,
           park,
-          image,
+          img,
           day,
           time,
         }),
@@ -53,8 +45,13 @@ const newFormHandler = async (event) => {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
-      console.log(response);
+      // console.log(response);
+      function reload() {
+        reload = location.reload();
+      }
+      reload();
     }
+
     // else the data-action = update
     // then fetch update PUT route
   } catch (error) {
