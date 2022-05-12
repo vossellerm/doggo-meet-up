@@ -15,14 +15,30 @@ const logout = async () => {
 document.querySelector("#logout").addEventListener("click", logout);
 
 // search button - generates new zipcode search results
-const newSearch = (event) => {
+const newSearch = async (event) => {
   event.preventDefault();
 
   const zipcode = document.querySelector("#zipcode").value.trim();
 
-  if (zipcode) {
-    // display all dog profiles with matching zipcode
-    console.log(zipcode);
+  if (!zipcode) {
+    alert("Enter valid Zip Code");
+    return;
+  }
+
+  const response = await fetch(`/api/search/${zipcode}`, {
+    method: "GET",
+    // body: JSON.stringify({ first_name, last_name, email, password }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  });
+
+  if (!response.ok) {
+    alert("No dogs available to play near you.");
+    return;
+  } else {
+    // display dogs with matching zipcode
+    console.log(response);
   }
 };
 

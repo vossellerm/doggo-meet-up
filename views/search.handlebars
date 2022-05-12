@@ -12,7 +12,72 @@
 </form>
 
 <div class="columns">
-  <div class="column">
+  {{#each dogs as |dog| }}
+<div class="column">
+    {{! display profile info }}
+    <div class="box">
+      {{! dog name }}
+      <div class="block">
+        <strong>Dog Name:</strong>
+        {{dog.name}}
+      </div>
+
+      {{! dog breed }}
+      <div class="block">
+        <strong>Dog Breed:</strong>
+        {{dog.breed}}
+      </div>
+
+      {{! dog size }}
+      <div class="block">
+        <strong>Dog Size:</strong>
+        {{dog.size}}
+      </div>
+
+      {{! dog gender }}
+      <div class="block">
+        <strong>Dog Gender:</strong>
+        {{dog.gender}}
+      </div>
+
+      {{! zipcode }}
+      <div class="block">
+        <strong>Zip Code:</strong>
+        {{dog.owner_id.zipcode}}
+      </div>
+
+      {{! Preffered Park }}
+      <div class="block">
+        <strong>Preferred Park:</strong>
+        {{dog.owner_id.park}}
+      </div>
+
+      {{! Play Days }}
+      <div class="block">
+        <strong>Play Days:</strong>
+        {{dog.owner_id.day}}
+      </div>
+
+      {{! Play Times }}
+      <div class="block">
+        <strong>Play Times:</strong>
+        {{dog.owner_id.time}}
+      </div>
+
+      {{! Dog Image }}
+      <div class="block">
+        <img
+          src="{{dog.img}}"
+          alt=""
+        />
+      </div>
+      <div>
+        <button class="button contact is-primary">Contact Me</button>
+      </div>
+</div>
+{{/each}}
+
+  {{!-- <div class="column">
 
     {{! display profile info }}
     <div class="box">
@@ -206,7 +271,7 @@
       </div>
     </div>
 
-  </div>
+  </div> --}}
 </div>
 
 <script src="./js/search.js"></script>
