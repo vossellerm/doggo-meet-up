@@ -55,7 +55,7 @@ router.put("/", withAuth, async (req, res) => {
         },
       }
     );
-
+    console.log(dog, setting);
     res.status(200).json({ message: "The profile has been updated" });
   } catch (err) {
     console.log(err);

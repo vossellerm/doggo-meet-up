@@ -27,6 +27,36 @@ const newFormHandler = async (event) => {
     // if (name && breed && size && gender && zipcode && park && image) {
 
     // }
+
+    const formType = document.querySelector("#updateForm");
+    const action = formType.dataset.action;
+    // if the data-action = create
+    if (action === "create") {
+      // then fetch create POST route
+      alert("Created");
+    } else {
+      alert("Updated");
+      const response = await fetch("/api/", {
+        method: "PUT",
+        body: JSON.stringify({
+          name,
+          breed,
+          size,
+          gender,
+          zipcode,
+          park,
+          image,
+          day,
+          time,
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      });
+      console.log(response);
+    }
+    // else the data-action = update
+    // then fetch update PUT route
   } catch (error) {
     console.log(error);
   }
