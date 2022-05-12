@@ -46,7 +46,12 @@ const newFormHandler = async (event) => {
         },
       });
       // console.log(response);
+      function reload() {
+        reload = location.reload();
+      }
+      reload();
     }
+
     // else the data-action = update
     // then fetch update PUT route
   } catch (error) {
