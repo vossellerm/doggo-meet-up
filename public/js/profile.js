@@ -76,3 +76,7 @@ document
 document.querySelector(".find-dogs").addEventListener("click", function () {
   document.location.replace("/search");
 });
+
+document.querySelector(".logo").addEventListener("click", function () {
+  document.location.replace("/home");
+});
