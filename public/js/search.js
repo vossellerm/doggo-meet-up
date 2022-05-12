@@ -24,8 +24,8 @@ const newSearch = async (event) => {
     alert("Enter valid Zip Code");
     return;
   }
-
-  const response = await fetch(`/api/search/${zipcode}`, {
+console.log(zipcode)
+  const response = await fetch(`/api/search/?zipcode=${zipcode}`, {
     method: "GET",
     // body: JSON.stringify({ first_name, last_name, email, password }),
     headers: {
@@ -36,10 +36,11 @@ const newSearch = async (event) => {
   if (!response.ok) {
     alert("No dogs available to play near you.");
     return;
-  } else {
-    // display dogs with matching zipcode
-    console.log(response);
-  }
+  } 
+  // else {
+  //   // display dogs with matching zipcode
+  //   console.log(response);
+  // }
 };
 
 document.querySelector("#search").addEventListener("click", newSearch);
