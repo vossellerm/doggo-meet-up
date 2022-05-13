@@ -46,6 +46,18 @@ img {
   margin: auto;
 }
 
+.searchProfile {
+  top: -32.65vh;
+}
+
+.searchLogout {
+  top: -33vh;
+}
+
+.mcD{
+left: -20%;
+}
+
 #search {
   display: block;
   margin: auto;
@@ -82,6 +94,7 @@ img {
 .find-dogs {
   display: block;
   margin: auto;
+  /* right: 23%; */
 }
 
 .search-zip {
