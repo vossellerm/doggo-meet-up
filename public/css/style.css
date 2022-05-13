@@ -4,16 +4,14 @@ header {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
-
 }
 
 h1 {
   font-size: 65px;
   color: azure;
   font-weight: bold;
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: "Love Ya Like A Sister", cursive;
 }
-
 
 h2 {
   font-size: 25px;
@@ -22,7 +20,7 @@ h2 {
   font-style: italic;
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: "Love Ya Like A Sister", cursive;
 }
 
 h3 {
@@ -31,7 +29,6 @@ h3 {
   text-align: center;
   border-bottom: solid 2px;
   margin-bottom: 10px;
- 
 }
 
 img {
@@ -42,7 +39,6 @@ img {
 
 #logo {
   height: 125px;
-
 }
 
 #logout {
@@ -78,11 +74,9 @@ img {
   width: 50%;
   margin: auto;
   margin-bottom: 20px;
-  background-color:rgba(74, 124, 89, 0.4);
+  background-color: rgba(74, 124, 89, 0.4);
   padding: 2em;
   border-radius: 20px;
-  
-  
 }
 
 .find-dogs {
@@ -98,12 +92,20 @@ img {
   margin-bottom: 20px;
 }
 
-.box{
+.box {
   background-color: #e9f9f1;
   padding: 2em;
+  display: block;
+  width: 400px;
+  margin: 20px;
 }
 
-body{
+.dog-profile {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
   background-image: url("/assets/two-dogs-playing-tug-of-war-with-disc.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -111,28 +113,27 @@ body{
   padding: 3em;
 }
 
-.searchzip{
+.searchzip {
   color: azure;
   font-size: 20px;
- 
 }
 
-.label{
+.label {
   color: azure;
 }
 
-.signup-p{
+.signup-p {
   color: azure;
 }
 
-.block{
+.block {
   color: black;
 }
 
-.pro{
-  color: rgb(69, 66, 66)
+.pro {
+  color: rgb(69, 66, 66);
 }
 
-.lh{
+.lh {
   color: rgb(255, 255, 255);
 }
