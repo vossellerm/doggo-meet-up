@@ -70,8 +70,6 @@ img {
 }
 
 .homepage-btns {
-  display: flex;
-  flex-direction: column;
   width: max-content;
   margin: auto;
 }
@@ -79,7 +77,6 @@ img {
 .homepage-btns button {
   margin: 20px;
   width: 200px;
-  display: block;
 }
 
 .login-form,
@@ -161,6 +158,17 @@ body {
 
   .searchProfile {
     top: -38.65vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage-btns {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homepage-btns button {
+    display: block;
   }
 }
 
