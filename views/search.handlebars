@@ -2,9 +2,16 @@
   <div class="navbar-item">
     <div class="buttons">
       <div class="block buttons are-normal">
-        <a class="button is-primary backpro searchProfile" type="profile" id="profile">Back To
-          Profile</a>
-        <a class="button is-primary logo searchLogout" type="logout" id="logout">Log Out</a>
+        <a
+          class="button is-primary backpro searchProfile"
+          type="profile"
+          id="profile"
+        >Back To Profile</a>
+        <a
+          class="button is-primary logo searchLogout"
+          type="logout"
+          id="logout"
+        >Log Out</a>
       </div>
     </div>
   </div>
@@ -23,7 +30,7 @@
   {{#each dogs as |dog|}}
 
     {{! display profile info }}
-    <div class="box">
+    <div class="box search-results">
       {{! dog name }}
       <div class="block">
         <strong>Dog Name:</strong>

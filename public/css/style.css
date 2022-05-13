@@ -44,18 +44,19 @@ img {
 #logout {
   display: block;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .searchProfile {
-  top: -32.65vh;
+  top: -33.65vh;
 }
 
 .searchLogout {
   top: -33vh;
 }
 
-.mcD{
-left: -20%;
+.mcD {
+  left: -20%;
 }
 
 #search {
@@ -69,7 +70,8 @@ left: -20%;
 }
 
 .homepage-btns {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: max-content;
   margin: auto;
 }
@@ -77,6 +79,7 @@ left: -20%;
 .homepage-btns button {
   margin: 20px;
   width: 200px;
+  display: block;
 }
 
 .login-form,
@@ -105,7 +108,7 @@ left: -20%;
   margin-bottom: 20px;
 }
 
-.box {
+.search-results {
   background-color: #e9f9f1;
   padding: 2em;
   display: block;
@@ -149,4 +152,46 @@ body {
 
 .lh {
   color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 1025px) {
+  .searchLogout {
+    top: -38vh;
+  }
+
+  .searchProfile {
+    top: -38.65vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .login-form,
+  .signup-p,
+  .signup-form {
+    width: 85%;
+  }
+
+  .find-dogs {
+    left: unset;
+  }
+
+  .searchLogout {
+    top: -30vh;
+  }
+
+  .searchProfile {
+    top: -30.65vh;
+  }
+
+  .search-zip {
+    width: 95%;
+  }
 }
