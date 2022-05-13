@@ -1,19 +1,3 @@
-// logout button -logs user out/destroys session
-// const logout = async () => {
-//   const response = await fetch("/api/users/logout", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//   });
-
-//   if (response.ok) {
-//     document.location.replace("/");
-//   } else {
-//     alert(response.statusText);
-//   }
-// };
-
-// document.querySelector("#logout").addEventListener("click", logout);
-
 // search button - generates new zipcode search results
 const newSearch = async (event) => {
   event.preventDefault();
@@ -27,7 +11,6 @@ const newSearch = async (event) => {
   console.log(zipcode);
   const response = await fetch(`/api/search/?zipcode=${zipcode}`, {
     method: "GET",
-    // body: JSON.stringify({ first_name, last_name, email, password }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
     },
@@ -44,14 +27,6 @@ const newSearch = async (event) => {
 
 document.querySelector("#search").addEventListener("click", newSearch);
 
-// // Contact Me Button - email window popup of user
-// const contact = (event) => {
-//   event.preventDefault();
-
-//   alert("hello");
-//   location.href = `mailto:${email}`;
-// };
-
 const logout = async () => {
   const response = await fetch("/api/user/logout", {
     method: "POST",
@@ -64,10 +39,6 @@ const logout = async () => {
     alert(response.statusText);
   }
 };
-
-// [...document.querySelectorAll(".contact")].forEach(function (item) {
-//   item.addEventListener("click", contact);
-// });
 
 document.querySelector(".backpro").addEventListener("click", function () {
   document.location.replace("/profile");

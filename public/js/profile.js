@@ -15,11 +15,6 @@ const newFormHandler = async (event) => {
 
     const day = document.querySelector("#day").value;
     const time = document.querySelector("#time").value;
-
-    // if (name && breed && size && gender && zipcode && park && image) {
-
-    // }
-
     const formType = document.querySelector("#updateForm");
     const action = formType.dataset.action;
     // if the data-action = create
@@ -61,7 +56,6 @@ const newFormHandler = async (event) => {
           "Content-Type": "application/json; charset=UTF-8",
         },
       });
-      // console.log(response);
     }
     location.reload();
     // else the data-action = update
